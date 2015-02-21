@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<script>
+
+$(document).ready(function(){
+
+ var a=1;
+
+ var b=2;
+
+ $('img').click(function (){
+
+  a=a+1;
+
+  if(a>=4){a=1;}
+
+  b=b+1;
+
+  if(b>=4){b=1;}
+
+  $('#a').hide("slide", { direction: "left" }, 3000);
+
+  $('#b').show("slide", { direction: "right" }, 3000,function (){
+
+   $('#a').attr('src',main1+'.jpg');
+
+   $('#a').show();
+
+   $('#b').attr('src',main2+'.jpg');
+
+   $('#b').hide();
+
+  });
+
+ });
+
+});
+
+</script>
+
+<style>
+
+img{height:auto; width:1000px;position:absolute;}
+
+#b{display:none;}
+
+</style>
+
+
+<img id="a" src="../img/main1.jpg"/>
+
+<img id="b" src="../img/main2.jpg"/>
+
+
+</body>
+</html>
